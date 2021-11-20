@@ -1,0 +1,28 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="row">
+
+    <div class="col-lg-3">
+<!--        <img class="thumbnail" src="{% static 'images/placeholder.png' %}">-->
+            <div class="box-element">
+                <a class="btn btn-outline" href="{% url 'store' %}">All</a>
+
+            </div>
+    </div>
+        {% for category in categories %}
+        <div class="col-lg-3">
+<!--        <img class="thumbnail" src="{% static 'images/placeholder.png' %}">-->
+
+            <div class="box-element">
+                <a class="btn btn-outline" href="{% url 'category' category.pk %}">{{category.category}}</a>
+            </div>
+        </div>
+                {% endfor %}
+
+</div>
+
+
+{% endblock content %}
